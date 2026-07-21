@@ -1,0 +1,11 @@
+Sitemap (Student Hub):-
+Home
+ ├── About
+ ├── Login/Registers
+ ├── Dashboard
+ │    ├── Calendar/Events
+ │    ├── Resources
+ │    └── Announcements
+ ├── Contact
+ ├── FAQ
+ └── Profile

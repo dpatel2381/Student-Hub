@@ -1,0 +1,22 @@
+Project folder structure
+Student Hub
+│── index.html        (Home)
+│── about.html
+│── login.html
+│── register.html
+│── dashboard.html
+│── calendar.html
+│── announcements.html
+│── resources.html
+│── profile.html
+│── contact.html
+│── faq.html
+│
+├── CSS
+│   └── style.css
+├── java script
+│   └── script.js
+├── assets
+│   ├── images
+│   └── icons
+└── README.md
