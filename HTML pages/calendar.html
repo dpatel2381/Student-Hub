@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calendar - StudentHub</title>
+</head>
+<body>
+        <h1>Events Calendar</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html">Announcements</option>
+                <option value="calendar.html">Calendar</option>
+                <option value="resources.html">Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="#">Log out</a>
+        </nav>
+            <h2>Upcoming Events</h2>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>July 25, 2026</td>
+                    <td>Workshop: Digital Logic Design</td>
+                    <td>Lab 3</td>
+                </tr>
+                <tr>
+                    <td>August 10, 2026</td>
+                    <td>Hackathon</td>
+                    <td>Main Auditorium</td>
+                </tr>
+                <tr>
+                    <td>August 20, 2026</td>
+                    <td>Guest Lecture: AI in Education</td>
+                    <td>Seminar Hall</td>
+                </tr>
+            </table>
+</body>
+</html>
