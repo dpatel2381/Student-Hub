@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html">Announcements</option>
+                <option value="calendar.html" selected>Calendar</option>
+                <option value="resources.html">Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="cta">Log out</a>
+          </div>
+        </nav>
+
+        <main>
+            <h1>Events Calendar</h1>
+
+            <div class="calendar-toolbar">
+                <input type="search" placeholder="Search events...">
+                <select>
+                    <option>All categories</option>
+                    <option>Workshop</option>
+                    <option>Hackathon</option>
+                    <option>Guest Lecture</option>
+                </select>
+            </div>
+
+            <div class="sidebar-layout">
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>July 25, 2026</td>
+                        <td>Workshop: Digital Logic Design</td>
+                        <td>Lab 3</td>
+                    </tr>
+                    <tr>
+                        <td>August 10, 2026</td>
+                        <td>Hackathon</td>
+                        <td>Main Auditorium</td>
+                    </tr>
+                    <tr>
+                        <td>August 20, 2026</td>
+                        <td>Guest Lecture: AI in Education</td>
+                        <td>Seminar Hall</td>
+                    </tr>
+                </table>
+
+                <div class="event-sidebar">
+                    <h3>Event Entry</h3>
+                    <a class="event-add" href="#">+ Add new event</a>
+                    <a class="event-add" href="#">+ Import from timetable</a>
+                    <a class="event-add" href="#">+ Sync to my calendar</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+</body>
+</html>
