@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        if (localStorage.getItem('studenthub-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html">Announcements</option>
+                <option value="calendar.html" selected>Calendar</option>
+                <option value="resources.html">Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="#" class="cta">Log out</a>
+          </div>
+        </nav>
+
+        <main>
+            <h1>Events Calendar</h1>
+
+            <div class="calendar-toolbar">
+                <input type="search" placeholder="Search events...">
+                <select>
+                    <option>All categories</option>
+                    <option>Workshop</option>
+                    <option>Hackathon</option>
+                    <option>Guest Lecture</option>
+                </select>
+            </div>
+
+            <div class="sidebar-layout">
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>July 25, 2026</td>
+                        <td>Workshop: Digital Logic Design</td>
+                        <td>Lab 3</td>
+                    </tr>
+                    <tr>
+                        <td>August 10, 2026</td>
+                        <td>Hackathon</td>
+                        <td>Main Auditorium</td>
+                    </tr>
+                    <tr>
+                        <td>August 20, 2026</td>
+                        <td>Guest Lecture: AI in Education</td>
+                        <td>Seminar Hall</td>
+                    </tr>
+                </table>
+
+                <div class="event-sidebar">
+                    <h3>Event Entry</h3>
+                    <a class="event-add" href="#" data-modal-open="addEventModal">+ Add new event</a>
+                    <a class="event-add" href="#">+ Import from timetable</a>
+                    <a class="event-add" href="#">+ Sync to my calendar</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+
+        <div class="modal-overlay" id="addEventModal" hidden>
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addEventTitle">
+            <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+            <h3 id="addEventTitle">Add New Event</h3>
+            <form>
+                <label for="event-title">Event title</label>
+                <input type="text" id="event-title" name="event-title" required>
+
+                <label for="event-date">Date</label>
+                <input type="text" id="event-date" name="event-date" placeholder="e.g. September 20, 2026" required>
+
+                <label for="event-location">Location</label>
+                <input type="text" id="event-location" name="event-location" required>
+
+                <div style="margin-top:14px;">
+                    <button type="submit">Save event</button>
+                </div>
+            </form>
+          </div>
+        </div>
+
+        <script src="main.js"></script>
+</body>
+</html>

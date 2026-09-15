@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Hub</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+          (function () {
+            if (localStorage.getItem('studenthub-theme') === 'dark') {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            }
+          })();
+        </script>
+    </head>
+    <body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="login.html" class="cta">Login/Register</a>
+          </div>
+        </nav>
+
+        <div class="notif-banner" data-banner-id="semester-2026">
+          <div class="notif-banner-inner">
+            <p>📌 The new semester begins <strong>August 1, 2026</strong> — check your timetable in the Dashboard.</p>
+            <button class="notif-close" type="button" aria-label="Dismiss notification">&times;</button>
+          </div>
+        </div>
+
+        <main>
+            <section class="hero">
+                <h3>Welcome to Student Hub!</h3>
+                <p>This is your one-stop destination for all student resources and information.<br> Explore the different sections and find the information you need.</p>
+            </section>
+
+            <section class="feature-row">
+                <div class="img-placeholder">Dashboard preview</div>
+                <div class="feature-text">
+                    <h2>Everything in one dashboard</h2>
+                    <div class="feature-bar"><strong>Announcements</strong>Stay on top of semester dates, library hours, and exam schedules.</div>
+                    <div class="feature-bar"><strong>Calendar</strong>Track workshops, hackathons, and guest lectures in one place.</div>
+                    <div class="feature-bar"><strong>Resources</strong>Jump straight to lecture notes, past papers, and lab manuals.</div>
+                </div>
+            </section>
+
+            <section class="feature-row">
+                <div class="img-placeholder">Community &amp; growth</div>
+                <div class="feature-text">
+                    <h2>Built for student growth</h2>
+                    <div class="feature-bar"><strong>Collaboration</strong>Connect with peers on group projects and mini-research.</div>
+                    <div class="feature-bar"><strong>Career guidance</strong>Get pointed toward networking and skill-building opportunities.</div>
+                    <div class="feature-bar"><strong>Support</strong>Reach the team any time through the Contact page.</div>
+                </div>
+            </section>
+
+            <h2 style="text-align:center;">What students are saying</h2>
+            <div class="slider" data-autoplay>
+                <div class="slider-track">
+                    <div class="slider-slide">
+                        <blockquote>"Student Hub keeps every deadline and announcement in one place &mdash; I stopped missing exam schedule updates."</blockquote>
+                        <cite>&mdash; 3rd Year, Computer Science</cite>
+                    </div>
+                    <div class="slider-slide">
+                        <blockquote>"The events calendar made it so easy to find workshops and hackathons happening on campus."</blockquote>
+                        <cite>&mdash; 2nd Year, Electronics</cite>
+                    </div>
+                    <div class="slider-slide">
+                        <blockquote>"Having lecture notes, past papers, and guides in one Resources page saves me hours every week."</blockquote>
+                        <cite>&mdash; Graduate Student</cite>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow slider-prev" type="button" aria-label="Previous testimonial">&#8249;</button>
+                    <button class="slider-arrow slider-next" type="button" aria-label="Next testimonial">&#8250;</button>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+
+            <p>If you have any questions or need assistance you can look for help in the "Contact Us" section.</p>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+    </body>
+</html>

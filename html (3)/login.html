@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StudentHub Login Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+          (function () {
+            if (localStorage.getItem('studenthub-theme') === 'dark') {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            }
+          })();
+        </script>
+    </head>
+    <body>
+        <div class="auth-shell">
+            <div class="auth-card">
+                <div class="logo-box">StudentHub</div>
+                <h2>Welcome to StudentHub</h2>
+                <h3>Please log in to your account.</h3>
+                <form action="dashboard.html">
+                    <label for="username">Email (username)</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <div class="auth-actions">
+                        <input type="submit" value="Login">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+
+                <p class="auth-footer">
+                    Don't have an account?<br>
+                    <a href="register.html">Register here</a>
+                </p>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

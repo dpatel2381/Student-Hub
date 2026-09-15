@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html" aria-current="page">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html">Announcements</option>
+                <option value="calendar.html">Calendar</option>
+                <option value="resources.html">Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" class="cta">Log out</a>
+          </div>
+        </nav>
+
+        <main>
+            <div class="welcome-banner">
+                <h2>Welcome, Student!</h2>
+                <p style="margin:0;">Here's a quick overview of your upcoming tasks and updates.</p>
+            </div>
+
+            <div class="dash-grid">
+                <div class="dash-card">
+                    <div class="dash-card-header">Announcements</div>
+                    <ul>
+                        <li>New semester starts on August 1</li>
+                        <li>Library timings updated</li>
+                        <li>Exam schedule released</li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Quick Links</div>
+                    <ul>
+                        <li><a href="resources.html">Study materials &amp; guides</a></li>
+                        <li><a href="calendar.html">Events calendar</a></li>
+                        <li><a href="profile.html">My profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Upcoming Events</div>
+                    <ul>
+                        <li>Workshop: Digital Logic Design &ndash; Jul 25</li>
+                        <li>Hackathon &ndash; Aug 10</li>
+                        <li>Guest Lecture: AI in Education &ndash; Aug 20</li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Resources</div>
+                    <ul>
+                        <li>Lecture notes just added</li>
+                        <li>New past papers uploaded</li>
+                        <li>Updated project guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+    </body>
+</html>

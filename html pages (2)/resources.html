@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html">Announcements</option>
+                <option value="calendar.html">Calendar</option>
+                <option value="resources.html" selected>Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <a href="#" class="cta">Log out</a>
+          </div>
+        </nav>
+
+        <main>
+            <h1>Resources</h1>
+
+            <div class="sidebar-layout">
+                <div>
+                    <div class="tabs">
+                        <button class="tab active" type="button">Study Materials</button>
+                        <button class="tab" type="button">Guides</button>
+                    </div>
+                    <div class="tab-panel">
+                        <a class="resource-item" href="#">Lecture Notes</a>
+                        <a class="resource-item" href="#">Assignments</a>
+                        <a class="resource-item" href="#">Past Papers</a>
+                    </div>
+                </div>
+
+                <div class="resources-side">
+                    <div class="img-placeholder">Resource library</div>
+                    <ul>
+                        <li><a href="#">Project Guidelines</a></li>
+                        <li><a href="#">Lab Manuals</a></li>
+                        <li><a href="#">Reference Books</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+</body>
+</html>

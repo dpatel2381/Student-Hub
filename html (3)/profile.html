@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        if (localStorage.getItem('studenthub-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+        <div class="profile-topbar">
+            <div class="logo-box">StudentHub</div>
+            <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#" class="cta">Logout</a>
+            </div>
+        </div>
+
+        <div class="profile-shell">
+            <aside class="profile-side">
+                <div class="profile-avatar">profile image</div>
+            </aside>
+
+            <section class="profile-main">
+                <div class="profile-main-top">
+                    <button type="button" class="btn-secondary" data-modal-open="editProfileModal">Edit profile</button>
+                </div>
+
+                <h2>Student Information</h2>
+                <div class="profile-field"><strong>Name</strong>&nbsp;</div>
+                <div class="profile-field"><strong>Email</strong>&nbsp;</div>
+                <div class="profile-field"><strong>Student ID</strong>&nbsp;</div>
+                <div class="profile-field"><strong>Major</strong>&nbsp;</div>
+                <div class="profile-field"><strong>Year</strong>&nbsp;</div>
+
+                <h2>Settings</h2>
+                <ul class="profile-settings-list">
+                    <li><a href="#" data-modal-open="editProfileModal">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="modal-overlay" id="editProfileModal" hidden>
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editProfileTitle">
+            <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+            <h3 id="editProfileTitle">Edit Profile</h3>
+            <form>
+                <label for="profile-name">Name</label>
+                <input type="text" id="profile-name" name="profile-name">
+
+                <label for="profile-email">Email</label>
+                <input type="email" id="profile-email" name="profile-email">
+
+                <label for="profile-major">Major</label>
+                <input type="text" id="profile-major" name="profile-major">
+
+                <label for="profile-year">Year</label>
+                <select id="profile-year" name="profile-year" style="width:100%; margin-bottom:6px;">
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                    <option value="grad">Graduate</option>
+                </select>
+
+                <div style="margin-top:14px;">
+                    <button type="submit">Save changes</button>
+                </div>
+            </form>
+          </div>
+        </div>
+
+        <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        if (localStorage.getItem('studenthub-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <select id="Dashboard" onchange="window.location.href=this.value;">
+                <option value="dashboard.html">Dashboard</option>
+                <option value="announcements.html" selected>Announcements</option>
+                <option value="calendar.html">Calendar</option>
+                <option value="resources.html">Resources</option>
+            </select>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="#" class="cta">Log out</a>
+          </div>
+        </nav>
+
+        <div class="notif-banner" data-banner-id="semester-2026">
+          <div class="notif-banner-inner">
+            <p>📌 The new semester begins <strong>August 1, 2026</strong> — check your timetable in the Dashboard.</p>
+            <button class="notif-close" type="button" aria-label="Dismiss notification">&times;</button>
+          </div>
+        </div>
+
+        <main>
+            <div class="panel" style="text-align:center; padding: 20px;">
+                <h2 style="margin:0;">Latest Updates</h2>
+            </div>
+
+            <div class="announce-grid">
+                <div class="announce-card">
+                    <div class="announce-card-header">Semester Info</div>
+                    <div class="announce-card-body">
+                        <p><strong>Semester Start</strong><br>The new semester begins on <strong>August 1, 2026</strong>.</p>
+                        <p>Please check your timetable in the Dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="announce-card">
+                    <div class="announce-card-header">Library Timings</div>
+                    <div class="announce-card-body">
+                        <p><strong>New Hours</strong><br>The library will now remain open from <strong>8 AM to 9 PM</strong> on weekdays.</p>
+                        <p>Weekend hours remain unchanged.</p>
+                    </div>
+                </div>
+
+                <div class="announce-card">
+                    <div class="announce-card-header">Exam Schedule</div>
+                    <div class="announce-card-body">
+                        <p><strong>Released</strong><br>The exam schedule has been released.</p>
+                        <p>Visit the Resources page to download the timetable.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+</body>
+</html>

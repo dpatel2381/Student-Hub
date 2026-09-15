@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register - StudentHub</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+          (function () {
+            if (localStorage.getItem('studenthub-theme') === 'dark') {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            }
+          })();
+        </script>
+    </head>
+    <body>
+        <div class="auth-shell">
+            <div class="auth-card">
+                <div class="logo-box">StudentHub</div>
+                <h2>Create your account</h2>
+                <h3>Join StudentHub to access your dashboard, resources, and more.</h3>
+
+                <form action="dashboard.html" onsubmit="return validateForm(event)">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+
+                    <label for="studentid">Student ID</label>
+                    <input type="text" id="studentid" name="studentid" required>
+
+                    <label for="course">Course</label>
+                    <input type="text" id="course" name="course" required>
+
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required style="width:100%; margin-bottom:6px;">
+                        <option value="" disabled selected>Select your year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="grad">Graduate</option>
+                    </select>
+
+                    <label>Gender</label>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <div class="auth-actions">
+                        <input type="submit" value="Register">
+                        <a href="login.html">Already have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            function validateForm(event) {
+            event.preventDefault();
+
+            const namePattern = /^[A-Za-z\s]{3,50}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const mobilePattern = /^[6-9]\d{9}$/; // Indian mobile format
+            const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            const fullname = document.getElementById("fullname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const course = document.getElementById("course").value.trim();
+            const year = document.getElementById("year").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+
+            if (!namePattern.test(fullname)) {
+                alert("Please enter a valid full name (letters only, min 3 chars).");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (!mobilePattern.test(mobile)) {
+                alert("Please enter a valid 10-digit mobile number starting with 6-9.");
+                return false;
+            }
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters, include uppercase, lowercase, number, and special character.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            if (course.length < 2) {
+                alert("Please enter your course.");
+                return false;
+            }
+            if (!year) {
+                alert("Please select your year.");
+                return false;
+            }
+            if (!gender) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            alert("Registration successful!");
+            document.getElementById("registerForm").submit();
+        }
+            </script>
+        <script src="main.js"></script>
+    </body>
+</html>

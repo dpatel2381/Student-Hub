@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        if (localStorage.getItem('studenthub-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html" aria-current="page">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="login.html" class="cta">Login/Register</a>
+          </div>
+        </nav>
+
+        <main>
+            <h1>Frequently Asked Questions</h1>
+
+            <div class="faq-layout">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-q-1">
+                            How do I reset my password?
+                        </button>
+                        <div class="faq-answer-wrap" id="faq-answer-1" role="region" aria-labelledby="faq-q-1">
+                            <div class="faq-answer">Go to Profile &rarr; Change Password.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-q-2">
+                            Where can I find announcements?
+                        </button>
+                        <div class="faq-answer-wrap" id="faq-answer-2" role="region" aria-labelledby="faq-q-2">
+                            <div class="faq-answer">Check the Announcements page or Dashboard.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-q-3">
+                            How do I contact support?
+                        </button>
+                        <div class="faq-answer-wrap" id="faq-answer-3" role="region" aria-labelledby="faq-q-3">
+                            <div class="faq-answer">Use the Contact page form or email us.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-q-4">
+                            How do I join a study group?
+                        </button>
+                        <div class="faq-answer-wrap" id="faq-answer-4" role="region" aria-labelledby="faq-q-4">
+                            <div class="faq-answer">Study groups are organized from the Resources page &mdash; look for the Guides tab.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-q-5">
+                            Is StudentHub free to use?
+                        </button>
+                        <div class="faq-answer-wrap" id="faq-answer-5" role="region" aria-labelledby="faq-q-5">
+                            <div class="faq-answer">Yes, all core features are free for enrolled students.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-side">
+                    <div class="faq-categories">
+                        <a href="#">Account &amp; Login</a>
+                        <a href="#">Dashboard &amp; Announcements</a>
+                        <a href="#">Support</a>
+                    </div>
+                    <div class="img-placeholder">Need more help?</div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+</body>
+</html>

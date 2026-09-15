@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - StudentHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        if (localStorage.getItem('studenthub-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+</head>
+<body>
+        <nav>
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="login.html" class="cta">Login/Register</a>
+          </div>
+        </nav>
+
+        <main>
+            <div class="panel" style="padding:20px;">
+                <h1 style="margin:0;">Contact Us</h1>
+            </div>
+            <p>Reach out to us using the form below or via email.</p>
+
+            <div class="contact-layout">
+                <div class="contact-form-panel">
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <div style="margin-top:14px;">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contact-side">
+                    <h3>Contact Info</h3>
+                    <div class="contact-detail"><strong>General Inquiries</strong>studenthub@gmail.com</div>
+                    <div class="contact-detail"><strong>Support</strong>support@studenthub.com</div>
+                    <div class="contact-detail"><strong>Helpline</strong>+91 98765 43210</div>
+                    <div class="contact-detail"><strong>Office Hours</strong>Mon&ndash;Fri, 9 AM&ndash;6 PM</div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+</body>
+</html>
