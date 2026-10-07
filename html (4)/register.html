@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register - StudentHub</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+          (function () {
+            try {
+              var t = localStorage.getItem('studenthub-theme');
+              if (t === 'dark' || (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+              }
+            } catch (e) {}
+          })();
+        </script>
+    </head>
+    <body>
+        <div class="auth-shell">
+            <div class="auth-card">
+                <div class="logo-box">StudentHub</div>
+                <h2>Create your account</h2>
+                <h3>Join StudentHub to access your dashboard, resources, and more.</h3>
+
+                <form id="registerForm" action="login.html" novalidate>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+                    <small class="field-error" id="err-fullname" role="alert" hidden></small>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <small class="field-error" id="err-email" role="alert" hidden></small>
+
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" autocomplete="tel-national" inputmode="numeric" maxlength="10" placeholder="10-digit number" required>
+                    <small class="field-error" id="err-mobile" role="alert" hidden></small>
+
+                    <label for="studentid">Student ID</label>
+                    <input type="text" id="studentid" name="studentid" autocomplete="off" required>
+                    <small class="field-error" id="err-studentid" role="alert" hidden></small>
+
+                    <label for="course">Course</label>
+                    <input type="text" id="course" name="course" required>
+                    <small class="field-error" id="err-course" role="alert" hidden></small>
+
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select your year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="grad">Graduate</option>
+                    </select>
+                    <small class="field-error" id="err-year" role="alert" hidden></small>
+
+                    <span class="field-label" id="gender-label">Gender</span>
+                    <div class="radio-group" role="radiogroup" aria-labelledby="gender-label">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                    <small class="field-error" id="err-gender" role="alert" hidden></small>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+                    <small class="field-hint">Min 8 characters with an uppercase letter, a lowercase letter, a number and a special character.</small>
+                    <small class="field-error" id="err-password" role="alert" hidden></small>
+
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required>
+                    <small class="field-error" id="err-confirm-password" role="alert" hidden></small>
+
+                    <p class="form-success" id="formSuccess" role="status" hidden></p>
+
+                    <div class="auth-actions">
+                        <input type="submit" value="Register">
+                        <a href="login.html">Already have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+        (function () {
+            var form = document.getElementById("registerForm");
+            var successBox = document.getElementById("formSuccess");
+
+            var rules = {
+                fullname: { test: /^[A-Za-z][A-Za-z\s.'-]{2,49}$/, msg: "Enter a valid full name (letters only, at least 3 characters)." },
+                email:    { test: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: "Enter a valid email address." },
+                mobile:   { test: /^[6-9]\d{9}$/, msg: "Enter a valid 10-digit mobile number starting with 6-9." },
+                studentid:{ test: /^[A-Za-z0-9]{5,15}$/, msg: "Student ID must be 5-15 letters or digits." },
+                course:   { test: /^.{2,}$/, msg: "Enter your course." },
+                password: { test: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d\s]).{8,}$/,
+                            msg: "Password needs 8+ characters with an uppercase letter, a lowercase letter, a number and a special character." }
+            };
+
+            function setError(id, message) {
+                var box = document.getElementById("err-" + id);
+                var field = document.getElementById(id);
+                if (box) { box.textContent = message || ""; box.hidden = !message; }
+                if (field && field.setAttribute) {
+                    if (message) { field.setAttribute("aria-invalid", "true"); field.setAttribute("aria-describedby", "err-" + id); }
+                    else { field.removeAttribute("aria-invalid"); field.removeAttribute("aria-describedby"); }
+                }
+            }
+
+            function check(id) {
+                var el = document.getElementById(id), value = el.value, message = "";
+                if (id === "year") {
+                    if (!value) message = "Select your year.";
+                } else if (id === "confirm-password") {
+                    if (value !== document.getElementById("password").value || !value) message = "Passwords do not match.";
+                } else {
+                    var rule = rules[id];
+                    if (!rule.test.test(id === "password" ? value : value.trim())) message = rule.msg;
+                }
+                setError(id, message);
+                return !message;
+            }
+
+            function checkGender() {
+                var ok = !!form.querySelector('input[name="gender"]:checked');
+                setError("gender", ok ? "" : "Select your gender.");
+                return ok;
+            }
+
+            var order = ["fullname", "email", "mobile", "studentid", "course", "year", "gender", "password", "confirm-password"];
+
+            // clear / re-check a field as the user fixes it
+            order.forEach(function (id) {
+                if (id === "gender") {
+                    form.querySelectorAll('input[name="gender"]').forEach(function (r) { r.addEventListener("change", checkGender); });
+                    return;
+                }
+                var el = document.getElementById(id);
+                el.addEventListener("blur", function () { if (el.value !== "") check(id); });
+                el.addEventListener("input", function () {
+                    if (!document.getElementById("err-" + id).hidden) check(id);
+                    if (id === "password" && document.getElementById("confirm-password").value) check("confirm-password");
+                });
+            });
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                var firstBad = null;
+                order.forEach(function (id) {
+                    var ok = id === "gender" ? checkGender() : check(id);
+                    if (!ok && !firstBad) firstBad = id;
+                });
+                if (firstBad) {
+                    var target = document.getElementById(firstBad) || form.querySelector('input[name="gender"]');
+                    if (target) target.focus();
+                    return;
+                }
+
+                successBox.textContent = "Registration successful!\u2026";
+                successBox.hidden = false;
+                form.querySelector('input[type="submit"]').disabled = true;
+                setTimeout(function () { window.location.href = form.getAttribute("action"); }, 2000);
+            });
+        })();
+        </script>
+        <script src="main.js"></script>
+    </body>
+</html>

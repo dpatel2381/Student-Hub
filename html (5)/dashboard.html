@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub Dashboard</title>
+        <meta name="description" content="Your StudentHub overview: announcements, quick links, upcoming events and resources.">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('studenthub-theme');
+          if (t === 'dark' || (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+</head>
+    <body data-requires-auth>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <nav aria-label="Main">
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="faq.html">FAQ</a>
+            <details class="nav-menu">
+              <summary>Dashboard</summary>
+              <div class="nav-menu-list">
+                <a href="dashboard.html" aria-current="page">Overview</a>
+                <a href="announcements.html">Announcements</a>
+                <a href="calendar.html">Calendar</a>
+                <a href="resources.html">Resources</a>
+              </div>
+            </details>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">Profile</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="login.html" class="cta" data-logout>Log out</a>
+          </div>
+        </nav>
+
+        <div class="notif-banner" data-banner-id="updates-2026">
+          <div class="notif-banner-inner">
+            <p>📌 Welcome back! Check the <a href="announcements.html">Announcements</a> page for the latest updates.</p>
+            <button class="notif-close" type="button" aria-label="Dismiss notification">&times;</button>
+          </div>
+        </div>
+
+        <main id="main">
+            <div class="welcome-banner">
+                <h2>Welcome, <span data-user-name>Student</span>!</h2>
+                <p style="margin:0;">Here's a quick overview of your upcoming tasks and updates.</p>
+            </div>
+
+            <div class="dash-grid">
+                <div class="dash-card">
+                    <div class="dash-card-header">Announcements</div>
+                    <ul>
+                        <li>New semester starts on August 1</li>
+                        <li>Library timings updated</li>
+                        <li>Exam schedule released</li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Quick Links</div>
+                    <ul>
+                        <li><a href="resources.html">Study materials &amp; guides</a></li>
+                        <li><a href="calendar.html">Events calendar</a></li>
+                        <li><a href="profile.html">My profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Upcoming Events</div>
+                    <ul data-upcoming-events>
+                        <li>Workshop: Digital Logic Design &ndash; Jul 25</li>
+                        <li>Hackathon &ndash; Aug 10</li>
+                        <li>Guest Lecture: AI in Education &ndash; Aug 20</li>
+                    </ul>
+                </div>
+
+                <div class="dash-card">
+                    <div class="dash-card-header">Resources</div>
+                    <ul>
+                        <li>Lecture notes just added</li>
+                        <li>New past papers uploaded</li>
+                        <li>Updated project guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+    </body>
+</html>

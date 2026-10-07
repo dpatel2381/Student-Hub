@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Student Hub</title>
+        <meta name="description" content="Learn about the mission and vision behind StudentHub.">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="stylesheet" href="styles.css">
+        <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('studenthub-theme');
+          if (t === 'dark' || (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    </head>
+    <body data-guest-only>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <nav aria-label="Main">
+          <div class="logo-box">StudentHub</div>
+          <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" aria-current="page">About</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+            <a href="login.html" class="cta" data-auth-cta>Login/Register</a>
+          </div>
+        </nav>
+
+        <main id="main">
+            <h1>About Student Hub</h1>
+
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h5>Mission</h5>
+                    <ul>
+                        <li>Empower students by providing easy access to study materials, tools, and guidance.</li>
+                        <li>Foster collaboration through interactive features, group projects, and peer-to-peer learning.</li>
+                        <li>Promote innovation by encouraging creativity, sharing ideas, and supporting mini-projects and research.</li>
+                        <li>Enhance engagement with announcements, events, and interactive dashboards.</li>
+                        <li>Support growth by offering career guidance, networking opportunities, and skill-building resources.</li>
+                    </ul>
+                </div>
+                <div class="mv-card">
+                    <h5>Vision</h5>
+                    <p>To be the leading digital hub for students, fostering collaboration, innovation, and growth by connecting learners with resources, opportunities, and communities that empower them to succeed academically and personally.</p>
+                </div>
+            </div>
+
+            <div class="about-details">
+                <p>Student Hub is a platform designed to provide students with access to a wide range of resources, information, and support.</p>
+                <p>Our goal is to create a centralized hub where students can find everything they need to succeed academically and personally.</p>
+                <p>For more information or if you have any questions, please visit our "Contact Us" section.</p>
+            </div>
+        </main>
+
+        <footer class="site-footer">StudentHub &mdash; a centralized hub for students, by students.</footer>
+        <script src="main.js"></script>
+    </body>
+</html>
