@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register - StudentHub</title>
+        <meta name="description" content="Create your StudentHub account to access your dashboard and resources.">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="stylesheet" href="styles.css">
+        <script>
+          (function () {
+            try {
+              var t = localStorage.getItem('studenthub-theme');
+              if (t === 'dark' || (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+              }
+            } catch (e) {}
+          })();
+        </script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <main class="auth-shell" id="main">
+            <div class="auth-card">
+                <div class="logo-box">StudentHub</div>
+                <h2>Create your account</h2>
+                <h3>Join StudentHub to access your dashboard, resources, and more.</h3>
+
+                <form id="registerForm" action="login.html" novalidate>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+                    <small class="field-error" id="err-fullname" role="alert" hidden></small>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <small class="field-error" id="err-email" role="alert" hidden></small>
+
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" autocomplete="tel-national" inputmode="numeric" maxlength="10" placeholder="10-digit number" required>
+                    <small class="field-error" id="err-mobile" role="alert" hidden></small>
+
+                    <label for="studentid">Student ID</label>
+                    <input type="text" id="studentid" name="studentid" autocomplete="off" required>
+                    <small class="field-error" id="err-studentid" role="alert" hidden></small>
+
+                    <label for="course">Course</label>
+                    <input type="text" id="course" name="course" required>
+                    <small class="field-error" id="err-course" role="alert" hidden></small>
+
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select your year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="grad">Graduate</option>
+                    </select>
+                    <small class="field-error" id="err-year" role="alert" hidden></small>
+
+                    <span class="field-label" id="gender-label">Gender</span>
+                    <div class="radio-group" role="radiogroup" aria-labelledby="gender-label">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                    <small class="field-error" id="err-gender" role="alert" hidden></small>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>
+                    <small class="field-hint">Min 8 characters with an uppercase letter, a lowercase letter, a number and a special character.</small>
+                    <small class="field-error" id="err-password" role="alert" hidden></small>
+
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required>
+                    <small class="field-error" id="err-confirm-password" role="alert" hidden></small>
+
+                    <p class="form-success" id="formSuccess" role="status" hidden></p>
+
+                    <div class="auth-actions">
+                        <input type="submit" value="Register">
+                        <a href="login.html">Already have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>

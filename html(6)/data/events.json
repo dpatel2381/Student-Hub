@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "title": "Web Development Workshop",
+    "date": "2026-10-28",
+    "category": "Workshop",
+    "location": "Computer Lab 2",
+    "description": "Build responsive pages with HTML, CSS and JavaScript."
+  },
+  {
+    "id": 2,
+    "title": "Student Innovation Hackathon",
+    "date": "2026-11-02",
+    "category": "Hackathon",
+    "location": "Innovation Centre",
+    "description": "A team-based challenge to prototype useful student solutions."
+  },
+  {
+    "id": 3,
+    "title": "AI in Education Guest Lecture",
+    "date": "2026-11-05",
+    "category": "Guest Lecture",
+    "location": "Seminar Hall A",
+    "description": "Explore practical uses of artificial intelligence in learning."
+  },
+  {
+    "id": 4,
+    "title": "Cybersecurity Awareness Session",
+    "date": "2026-11-09",
+    "category": "Seminar",
+    "location": "Auditorium",
+    "description": "Learn safe browsing and account security basics."
+  },
+  {
+    "id": 5,
+    "title": "Python Coding Contest",
+    "date": "2026-11-12",
+    "category": "Competition",
+    "location": "Programming Lab 1",
+    "description": "Solve programming problems individually."
+  },
+  {
+    "id": 6,
+    "title": "Resume Building Workshop",
+    "date": "2026-11-16",
+    "category": "Workshop",
+    "location": "Placement Cell",
+    "description": "Prepare a clear, effective student resume."
+  },
+  {
+    "id": 7,
+    "title": "Open Source Contribution Day",
+    "date": "2026-11-19",
+    "category": "Workshop",
+    "location": "Computer Lab 3",
+    "description": "Learn Git workflows and make a first contribution."
+  },
+  {
+    "id": 8,
+    "title": "Cloud Computing Talk",
+    "date": "2026-11-23",
+    "category": "Guest Lecture",
+    "location": "Seminar Hall B",
+    "description": "Introduction to cloud platforms and deployment."
+  },
+  {
+    "id": 9,
+    "title": "UI/UX Design Sprint",
+    "date": "2026-11-27",
+    "category": "Competition",
+    "location": "Design Studio",
+    "description": "Create and present a user-centred interface concept."
+  },
+  {
+    "id": 10,
+    "title": "Database Design Clinic",
+    "date": "2026-12-01",
+    "category": "Workshop",
+    "location": "Computer Lab 2",
+    "description": "Practice relational modelling and SQL queries."
+  },
+  {
+    "id": 11,
+    "title": "Robotics Club Showcase",
+    "date": "2026-12-04",
+    "category": "Exhibition",
+    "location": "Main Auditorium",
+    "description": "Student teams demonstrate robotics projects."
+  },
+  {
+    "id": 12,
+    "title": "Career Paths in Software",
+    "date": "2026-12-08",
+    "category": "Guest Lecture",
+    "location": "Seminar Hall A",
+    "description": "Discuss roles, skills and early career planning."
+  },
+  {
+    "id": 13,
+    "title": "Web Accessibility Meetup",
+    "date": "2026-12-11",
+    "category": "Seminar",
+    "location": "Library Conference Room",
+    "description": "Improve websites for keyboard and screen-reader users."
+  },
+  {
+    "id": 14,
+    "title": "Data Analytics Mini Challenge",
+    "date": "2026-12-15",
+    "category": "Competition",
+    "location": "Analytics Lab",
+    "description": "Explore a sample dataset and share findings."
+  },
+  {
+    "id": 15,
+    "title": "Semester Project Expo",
+    "date": "2026-12-18",
+    "category": "Exhibition",
+    "location": "Central Hall",
+    "description": "Present semester projects to peers and faculty."
+  },
+  {
+    "id": 16,
+    "title": "Git and GitHub Basics",
+    "date": "2026-12-21",
+    "category": "Workshop",
+    "location": "Computer Lab 1",
+    "description": "Practice version control and repository collaboration."
+  },
+  {
+    "id": 17,
+    "title": "Mobile App Prototyping",
+    "date": "2027-01-07",
+    "category": "Workshop",
+    "location": "Innovation Centre",
+    "description": "Create a clickable mobile application prototype."
+  },
+  {
+    "id": 18,
+    "title": "Research Writing Orientation",
+    "date": "2027-01-12",
+    "category": "Seminar",
+    "location": "Seminar Hall B",
+    "description": "Learn how to structure a short technical report."
+  }
+]
