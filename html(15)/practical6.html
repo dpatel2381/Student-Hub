@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Data Explorer - StudentHub</title>
+  <meta name="description" content="Explore StudentHub events, students and FAQs loaded from JSON using the Fetch API.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="practical6.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('studenthub-theme');
+        if (theme === 'dark' || (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (error) { /* localStorage may be unavailable */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav aria-label="Main">
+    <a class="logo-box" href="index.html" aria-label="StudentHub home">StudentHub</a>
+    <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="resources.html">Resources</a>
+      <a href="faq.html">FAQ</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark/light theme">🌙</button>
+    </div>
+  </nav>
+
+  <main id="main" class="data-page">
+    <div class="page-intro">
+      <p class="eyebrow">PRACTICAL 6 · FETCH API + JSON</p>
+      <h1>StudentHub Data Explorer</h1>
+      <p>Explore events, student records and frequently asked questions loaded from local JSON files.</p>
+    </div>
+
+    <section class="data-panel" aria-labelledby="data-heading">
+      <h2 id="data-heading">Browse data</h2>
+      <div class="dataset-tabs" role="group" aria-label="Choose a data collection">
+        <button type="button" class="dataset-tab is-active" data-dataset="events" aria-pressed="true">Events</button>
+        <button type="button" class="dataset-tab" data-dataset="students" aria-pressed="false">Students</button>
+        <button type="button" class="dataset-tab" data-dataset="faqs" aria-pressed="false">FAQs</button>
+      </div>
+
+      <div class="data-controls">
+        <label class="control-field search-field" for="dataSearch">
+          <span>Search records</span>
+          <input type="search" id="dataSearch" placeholder="Search by keyword…" autocomplete="off">
+        </label>
+        <label class="control-field" for="dataFilter">
+          <span>Filter by</span>
+          <select id="dataFilter"><option value="all">All records</option></select>
+        </label>
+        <label class="control-field" for="dataSort">
+          <span>Sort by</span>
+          <select id="dataSort"><option value="default">Default order</option></select>
+        </label>
+      </div>
+
+      <div class="data-summary">
+        <p id="resultCount" aria-live="polite">Loading records…</p>
+        <p id="pageSummary" class="page-summary"></p>
+      </div>
+
+      <div id="dataStatus" class="data-status" role="status" aria-live="polite">Loading JSON data…</div>
+      <div id="dataResults" class="data-results" aria-busy="true"></div>
+      <div id="pagination" class="pagination" aria-label="Data pages"></div>
+      <button id="retryButton" class="retry-button" type="button" hidden>Try loading again</button>
+    </section>
+    <p class="implementation-note"><strong>Practical 6 concept:</strong> Data is requested with <code>fetch()</code>, parsed with <code>response.json()</code>, then searched, filtered, sorted and paginated in JavaScript.</p>
+  </main>
+
+  <footer class="site-footer">StudentHub — a centralized hub for students, by students.</footer>
+  <script src="practical6.js" defer></script>
+</body>
+</html>

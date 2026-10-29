@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "question": "How do I reset my password?",
+    "answer": "Open the Forgot Password page and follow the on-screen instructions.",
+    "category": "Account"
+  },
+  {
+    "id": 2,
+    "question": "Where can I find campus announcements?",
+    "answer": "Open the Announcements page from the dashboard menu.",
+    "category": "Dashboard"
+  },
+  {
+    "id": 3,
+    "question": "How do I register for an event?",
+    "answer": "Open the event details and follow the registration instructions provided by the organiser.",
+    "category": "Events"
+  },
+  {
+    "id": 4,
+    "question": "Can I use StudentHub on a phone?",
+    "answer": "Yes. The interface is designed to adapt to mobile, tablet and desktop screens.",
+    "category": "Technical"
+  },
+  {
+    "id": 5,
+    "question": "Who can access the student dashboard?",
+    "answer": "Students should sign in with their account before opening protected dashboard pages.",
+    "category": "Account"
+  },
+  {
+    "id": 6,
+    "question": "How can I update my profile?",
+    "answer": "Open Profile and choose the edit option to update available details.",
+    "category": "Account"
+  },
+  {
+    "id": 7,
+    "question": "Where are study resources listed?",
+    "answer": "Visit the Resources page for study materials and guides.",
+    "category": "Resources"
+  },
+  {
+    "id": 8,
+    "question": "How do I contact support?",
+    "answer": "Use the Contact page and submit the support form.",
+    "category": "Support"
+  },
+  {
+    "id": 9,
+    "question": "What should I do if a page does not load?",
+    "answer": "Check your connection, refresh the page, and contact support if the issue continues.",
+    "category": "Technical"
+  },
+  {
+    "id": 10,
+    "question": "How do I search for events?",
+    "answer": "Use the event search field and category filter on the Events page.",
+    "category": "Events"
+  },
+  {
+    "id": 11,
+    "question": "Can I change the website theme?",
+    "answer": "Use the theme toggle in the navigation bar where available.",
+    "category": "Technical"
+  },
+  {
+    "id": 12,
+    "question": "Where can I find FAQs?",
+    "answer": "Open the FAQ page from the main navigation.",
+    "category": "Resources"
+  },
+  {
+    "id": 13,
+    "question": "How do I join a study group?",
+    "answer": "Check the Resources page or announcements for current study-group information.",
+    "category": "Resources"
+  },
+  {
+    "id": 14,
+    "question": "Are event dates final?",
+    "answer": "Check the latest event notice because organisers may update dates or locations.",
+    "category": "Events"
+  },
+  {
+    "id": 15,
+    "question": "How can I keep my account safe?",
+    "answer": "Use a strong unique password and do not share your sign-in details.",
+    "category": "Account"
+  },
+  {
+    "id": 16,
+    "question": "What browsers are supported?",
+    "answer": "Use a current version of Chrome, Edge, Firefox or Safari for the best experience.",
+    "category": "Technical"
+  },
+  {
+    "id": 17,
+    "question": "Can I report incorrect information?",
+    "answer": "Contact the StudentHub support team and include the page and details that need correction.",
+    "category": "Support"
+  },
+  {
+    "id": 18,
+    "question": "Where can I see upcoming activities?",
+    "answer": "Check the dashboard and Events Calendar for upcoming campus activities.",
+    "category": "Dashboard"
+  }
+]
